@@ -1,0 +1,37 @@
+{{>layout/header}}
+<!--
+    연습 프로젝트 이기 때문에 직접 라이브러리를 받아서 사용하지 않고
+    외부 CDN을 사용 (bootstrap)
+ -->
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <h1>mini project</h1>
+                <a href="/posts/save" role="button" class="btn btn-primary">글 등록</a>
+            </div>
+        </div>
+        <br>
+        <!-- 목록 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>게시글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            <!-- posts(attribute name) 순회 (for문과 유사) -->
+            {{#posts}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
+{{>layout/footer}}

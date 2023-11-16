@@ -38,4 +38,6 @@ dependencies {
     // > 로컬환경에서 jpa 테스트 용도로 많이 사용
     implementation('com.h2database:h2')
 
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+
 }
